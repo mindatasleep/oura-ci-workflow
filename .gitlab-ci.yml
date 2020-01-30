@@ -15,8 +15,8 @@ variables:
 
 before_script:
     - export IMAGE=$CI_REGISTRY/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME
+    - echo $IMAGE
     - export WEB_IMAGE=$IMAGE:web
-    - export NGINX_IMAGE=$IMAGE:nginx
     - apk add --no-cache openssh-client bash
     - chmod +x ./setup_env.sh
     - bash ./setup_env.sh
@@ -25,7 +25,7 @@ before_script:
 build:
     stage: build
     script:
-        - docker pull $IMAGE:webapp || true
+        - docker pull $IMAGE:web || true
         - docker-compose -f docker-compose.ci.yml build
         - docker c
         - docker push $IMAGE:webapp
