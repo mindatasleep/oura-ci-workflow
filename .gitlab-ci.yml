@@ -26,7 +26,7 @@ build:
     script:
         - docker pull $IMAGE:web || true
         - docker-compose -f docker-compose.ci.yml build
-        - docker push $IMAGE:webapp
+        - docker push $IMAGE:web
 
 deploy:
     stage: deploy
