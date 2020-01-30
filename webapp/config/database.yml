@@ -8,14 +8,17 @@ default: &default
 
 development:
   <<: *default
-  database: webapp_development
+  # database: webapp_development
+  database: postgres
 
 test:
   <<: *default
-  database: webapp_test
+  # database: webapp_test
+  database: postgres
 
 production:
   <<: *default
-  database: webapp_production
+  # database: webapp_production
+  database: postgres
   username: webapp
   password: <%= ENV['WEBAPP_DATABASE_PASSWORD'] %>
