@@ -5,8 +5,11 @@ image:
 services:
     - docker:dind
 
+cache:
+    key: "$CI_JOB_STAGE-$CI_COMMIT_REF_SLUG"      
+
 stages:
-    # - build
+    - build
     - deploy
 
 variables:
