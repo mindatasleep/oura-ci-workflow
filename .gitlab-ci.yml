@@ -15,7 +15,6 @@ variables:
 
 before_script:
     - export IMAGE=$CI_REGISTRY/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME
-    - echo $IMAGE
     - export WEB_IMAGE=$IMAGE:web
     - apk add --no-cache openssh-client bash
     - chmod +x ./setup_env.sh
