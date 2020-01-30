@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'oura/index'
+  get 'oura/login'
+  get 'oura/user'
   get 'pages/index'
   root to: 'pages#index'
 
