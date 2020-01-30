@@ -1,7 +1,12 @@
 version: '3.7'
 services:
     web:
-        build: ./webapp
+        build: 
+            context: ./webapp
+            dockerfile: Dockerfile
+            cache_from:
+            - "${WEB_IMAGE}"
+        image: "${WEB_IMAGE}"
         command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
         volumes:
             -  ./webapp:/myapp
