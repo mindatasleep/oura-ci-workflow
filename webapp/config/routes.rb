@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   get 'pages/index'
   root to: 'pages#index'
 
+  match "/oura/" => "oura#index"
+  # match "/patients/:id" => "patients#show"
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
