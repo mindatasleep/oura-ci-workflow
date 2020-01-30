@@ -1,7 +1,7 @@
 image:
     name: docker/compose:1.24.1
-    entryponint: [""]
-
+    entrypoint: [""]
+    
 services:
     - docker:dind
 
