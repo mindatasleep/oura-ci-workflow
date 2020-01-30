@@ -30,6 +30,8 @@ build:
         - docker pull $IMAGE:web || true
         - docker-compose -f docker-compose.ci.yml build
         - docker push $IMAGE:web
+    except: 
+        - master
 
 deploy:
     stage: deploy
