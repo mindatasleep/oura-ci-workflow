@@ -6,7 +6,7 @@ services:
     - docker:dind
 
 stages:
-    - build
+    # - build
     - deploy
 
 variables:
