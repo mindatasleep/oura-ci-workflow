@@ -5,6 +5,8 @@ services:
         command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
         volumes:
             -  ./webapp:/myapp
+            - ./.tmp/assets:/myapp/public/tmp/
+            - ./.tmp/partials:/myapp/app/views/partials
         ports:
             - "3000:3000"
         depends_on:
@@ -13,5 +15,10 @@ services:
         image: postgres:11.1
         volumes:
             - db-data:/var/lib/postgresql/data
+
+    analysis:
+        build: ./analysis
+        volumes:
+            - ./.tmp:/myapp/src/tmp
 volumes:
     db-data: {}
