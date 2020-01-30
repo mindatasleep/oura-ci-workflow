@@ -37,9 +37,7 @@ deploy:
     stage: deploy
     script:
         - mkdir -p ~/.ssh
-        # - mkdir -p ~/tmp
         - echo "$PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
-        # - cat ~/.ssh/id_rsa
         - chmod 700 ~/.ssh/id_rsa
         - eval "$(ssh-agent -s)"
         - ssh-add ~/.ssh/id_rsa
@@ -47,5 +45,6 @@ deploy:
         - chmod +x ./deploy.sh
         - ls -a
         - scp  -o StrictHostKeyChecking=no -r ./.env ./docker-compose.ci.yml root@$DIGITAL_OCEAN_IP_ADDRESS:/
+        - ssh root@$DIGITAL_OCEAN_IP_ADDRESS:/ ls -a
         - ls -a
         - bash ./deploy.sh
