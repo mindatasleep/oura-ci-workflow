@@ -1,0 +1,42 @@
+<%= form_with(model: oura, local: true) do |form| %>
+  <% if oura.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(oura.errors.count, "error") %> prohibited this oura from being saved:</h2>
+
+      <ul>
+        <% oura.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :userinfo %>
+    <%= form.text_field :userinfo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sleep %>
+    <%= form.text_field :sleep %>
+  </div>
+
+  <div class="field">
+    <%= form.label :activity %>
+    <%= form.text_field :activity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :readiness %>
+    <%= form.text_field :readiness %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

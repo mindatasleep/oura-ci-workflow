@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ouras</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Userinfo</th>
+      <th>Sleep</th>
+      <th>Activity</th>
+      <th>Readiness</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ouras.each do |oura| %>
+      <tr>
+        <td><%= oura.user_id %></td>
+        <td><%= oura.userinfo %></td>
+        <td><%= oura.sleep %></td>
+        <td><%= oura.activity %></td>
+        <td><%= oura.readiness %></td>
+        <td><%= link_to 'Show', oura %></td>
+        <td><%= link_to 'Edit', edit_oura_path(oura) %></td>
+        <td><%= link_to 'Destroy', oura, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Oura', new_oura_path %>

@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  resources :ouras
+  resources :workouts
+  devise_for :users
   get 'oura/index'
-  get 'oura/login'
-  get 'oura/user'
+
+  
+  
   get 'pages/index'
   root to: 'pages#index'
 

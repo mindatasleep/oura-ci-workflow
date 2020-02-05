@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @oura.user_id %>
+</p>
+
+<p>
+  <strong>Userinfo:</strong>
+  <%= @oura.userinfo %>
+</p>
+
+<p>
+  <strong>Sleep:</strong>
+  <%= @oura.sleep %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @oura.activity %>
+</p>
+
+<p>
+  <strong>Readiness:</strong>
+  <%= @oura.readiness %>
+</p>
+
+<%= link_to 'Edit', edit_oura_path(@oura) %> |
+<%= link_to 'Back', ouras_path %>
