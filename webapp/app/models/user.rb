@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :workouts
-  has_one :ouradataset
+  has_one :oura, :dependent => :destroy
 end
